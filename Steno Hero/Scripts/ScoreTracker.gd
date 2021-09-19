@@ -56,7 +56,7 @@ func _init():
 	PostDiminishRate = log(POST_DIMINISH_PERCENT)/POST_DIMINISH_TIME;
 
 func _ready():
-	accessible = AccessibleFactory.recreate(accessible, self);
+	#accessible = AccessibleFactory.recreate(accessible, self);
 	GameController = get_node("/root/StenoHeroGame");
 	TextEntry = get_node("../TextInput");
 
@@ -64,8 +64,8 @@ func _ready():
 	
 	TextEntry.connect(TextEntry.WORD_SUBMIT, self, "_on_word_entered");
 
-func _exit_tree():
-	accessible = AccessibleFactory.clear(accessible);
+#func _exit_tree():
+	#accessible = AccessibleFactory.clear(accessible);
 
 func _on_word_entered(word):
 	if(!word || !word.is_typeable_word()):

@@ -11,15 +11,15 @@ const SimplePopup = preload("res://Prefabs/PopupOverlay/SimplePopup.scn");
 var popup;
 var accessible;
 
-func _enter_tree():	
-	if(ButtonName != null):
-		accessible = AccessibleFactory.create_with_name(self, ButtonName);
-	else:
-		accessible = AccessibleFactory.create(self);
-	accessible.set_using_popup(true);
+#func _enter_tree():	
+	#if(ButtonName != null):
+#		#accessible = AccessibleFactory.create_with_name(self, ButtonName);
+#	else:
+#		#accessible = AccessibleFactory.create(self);
+#	#accessible.set_using_popup(true);
 	
-func _exit_tree():
-	accessible = AccessibleFactory.clear(accessible);
+#func _exit_tree():
+#	#accessible = AccessibleFactory.clear(accessible);
 
 func _ready():	
 	popup = SimplePopup.instance();	

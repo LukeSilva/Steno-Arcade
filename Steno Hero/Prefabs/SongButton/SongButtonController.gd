@@ -21,7 +21,7 @@ func _init():
 	add_user_signal(FOCUSED);	
 
 func _ready():
-	accessible = AccessibleFactory.recreate(accessible, self);
+#	#accessible = AccessibleFactory.recreate(accessible, self);
 	StenoHeroGlobals = get_node('/root/StenoHeroGlobals');
 	
 	connect("pressed", self, "_on_songButton_pressed");
@@ -29,8 +29,8 @@ func _ready():
 		
 	set_process(true);	
 	
-func _exit_tree():
-	accessible = AccessibleFactory.clear(accessible);
+#func _exit_tree():
+#	#accessible = AccessibleFactory.clear(accessible);
 		
 func _process(delta):
 	_update_state_signals();

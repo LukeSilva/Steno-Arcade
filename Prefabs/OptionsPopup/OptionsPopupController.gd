@@ -19,7 +19,7 @@ func _ready():
 	pass
 	
 func _enter_tree():
-	accessible = AccessibleFactory.recreate_with_name(accessible, self, "Settings");
+#	#accessible = AccessibleFactory.recreate_with_name(accessible, self, "Settings");
 	settings = get_node("/root/GameSettings");
 	
 	popup = get_node("Popup");
@@ -32,8 +32,8 @@ func _enter_tree():
 	connect(APPLY_SETTINGS, get_node("Popup/Panel/GridContainer/DisplayButton"), "set_settings");
 	connect(APPLY_SETTINGS, get_node("Popup/Panel/GridContainer/VolumeSlider"), "set_settings");
 	
-func _exit_tree():
-	accessible = AccessibleFactory.clear(accessible);
+#func _exit_tree():
+#	#accessible = AccessibleFactory.clear(accessible);
 	
 	popup.disconnect("about_to_show", self, "show");
 	

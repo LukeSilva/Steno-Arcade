@@ -17,12 +17,12 @@ func _ready():
 	pass
 	
 func _enter_tree():
-	accessible = AccessibleFactory.recreate_with_name(accessible, self, "Close");	
+#	#accessible = AccessibleFactory.recreate_with_name(accessible, self, "Close");	
 	connect("pressed", self, "close_window");
 	
 func _exit_tree():
 	disconnect("pressed", self, "close_window");	
-	accessible = AccessibleFactory.clear(accessible);
+	##accessible = AccessibleFactory.clear(accessible);
 
 func _input_event(event):
 	_process_close(event);

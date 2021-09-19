@@ -3,10 +3,10 @@ extends TextureFrame
 
 var accessible;
 
-func _ready():
-	accessible = AccessibleFactory.recreate_with_name(accessible, self, "Lyrics");
+#func _ready():
+#	#accessible = AccessibleFactory.recreate_with_name(accessible, self, "Lyrics");
 	
-func _exit_tree():
-	accessible = AccessibleFactory.clear(accessible);
+#func _exit_tree():
+#	#accessible = AccessibleFactory.clear(accessible);
 
 

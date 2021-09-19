@@ -38,7 +38,7 @@ func _scroll_to_focus_button():
 		return;
 	
 	var buttonWidth = FocusedButton.get_size().x;
-	var padding = get("custom_constants/margin");
+	var padding = 0;#get("custom_constants/margin");
 	var minOffset = max(FocusedButton.get_pos().x - buttonWidth / 2, 0);
 	var maxOffset = FocusedButton.get_pos().x + buttonWidth + padding * 2 + buttonWidth / 2;
 	

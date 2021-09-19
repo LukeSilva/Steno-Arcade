@@ -22,11 +22,11 @@ func _ready():
 	pass
 	
 func _enter_tree():
-	accessible = AccessibleFactory.create_with_name(self, "Credits Dialog");
+#	#accessible = AccessibleFactory.create_with_name(self, "Credits Dialog");
 	get_popup().connect("about_to_show", self, "show");
 	
 func _exit_tree():
-	accessible = AccessibleFactory.clear(accessible);
+#	#accessible = AccessibleFactory.clear(accessible);
 	get_popup().disconnect("about_to_show", self, "show");
 	
 func popup():

@@ -24,7 +24,7 @@ func _init():
 	add_user_signal(CLOSING);
 	
 func _ready():
-	accessible = AccessibleFactory.recreate_with_name(accessible, self, "Lyrics");
+#	#accessible = AccessibleFactory.recreate_with_name(accessible, self, "Lyrics");
 	popup = get_node("Popup");
 	popup.connect("about_to_show", self, "show");
 		
@@ -38,7 +38,7 @@ func _ready():
 	
 func _exit_tree():
 	get_node("/root/BackgroundMusic").play_default_music();
-	accessible = AccessibleFactory.clear(accessible);
+#	#accessible = AccessibleFactory.clear(accessible);
 	
 func _set_song_lyrics():
 	if(SongMetaData != null && headerLabel != null && bodyLabel != null):

@@ -49,7 +49,7 @@ func _ready():
 	InputBox.set("custom_fonts/font", StenoHeroGlobals.LyricDisplayFont);
 	InputBox.grab_focus();
 	InputBox.connect("focus_exit", self, "_on_entrybox_focus_exit");
-	accessible = AccessibleFactory.recreate_with_name(accessible, InputBox, "Lyrics Input");
+	#accessible = AccessibleFactory.recreate_with_name(accessible, InputBox, "Lyrics Input");
 	
 	InputDisplay = get_node("InputDisplayLabel");
 	InputDisplay.set("custom_fonts/normal_font", StenoHeroGlobals.LyricDisplayFont);
@@ -73,8 +73,8 @@ func _ready():
 	
 	set_process(true);
 
-func _exit_tree():
-	accessible = AccessibleFactory.clear(accessible);
+#func _exit_tree():
+	#accessible = AccessibleFactory.clear(accessible);
 
 func _on_entrybox_focus_exit():
 	pass

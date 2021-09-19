@@ -18,7 +18,7 @@ func get_soft_streak():
 	return softStreak;
 
 func _ready():
-	accessible = AccessibleFactory.recreate(accessible, self);
+	#accessible = AccessibleFactory.recreate(accessible, self);
 	
 	GameController = get_node("/root/StenoHeroGame");
 	TextEntry = get_node("../TextInput");
@@ -30,8 +30,8 @@ func _ready():
 	#GameController.connect(GameController.WORD_FINISHED, self, "_on_word_finished");
 	#TextEntry.connect(TextEntry.WORD_REALTIME, self, "_on_word_entered");
 
-func _exit_tree():
-	accessible = AccessibleFactory.clear(accessible);
+#func _exit_tree():
+	#accessible = AccessibleFactory.clear(accessible);
 	
 func _on_line_finished(line):
 	#Recalculate the streak based on the finalized line

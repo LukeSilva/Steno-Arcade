@@ -1,7 +1,7 @@
 extends Node
 
 const GameInfo = preload('res://Scripts/GameInfo.gd');
-const LyricDisplayFont = preload('res://Steno Hero/Fonts/LyricDisplay.fnt');
+const LyricDisplayFont = preload('res://Steno Hero/Fonts/NotoSansTC-Regular.fnt');
 var LyricLeaveAcceleration;
 
 var SongData;

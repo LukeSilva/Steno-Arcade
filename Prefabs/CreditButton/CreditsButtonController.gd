@@ -8,12 +8,12 @@ export(bool) var AnimateIn = true setget set_animate_in;
 var popup;
 var accessible;
 
-func _enter_tree():	
-	accessible = AccessibleFactory.recreate_with_name(accessible, self, "Credits");
-	accessible.set_using_popup(true);	
+#func _enter_tree():	
+#	#accessible = AccessibleFactory.recreate_with_name(accessible, self, "Credits");
+#	#accessible.set_using_popup(true);	
 	
-func _exit_tree():
-	accessible = AccessibleFactory.clear(accessible);
+#func _exit_tree():
+	##accessible = AccessibleFactory.clear(accessible);
 
 func _ready():	
 	popup = CreditsPopup.instance();

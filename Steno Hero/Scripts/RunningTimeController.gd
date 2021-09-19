@@ -10,7 +10,7 @@ var GameController;
 var currentTimeStamp;
 
 func _ready():
-	accessible = AccessibleFactory.recreate(accessible, self);
+	#accessible = AccessibleFactory.recreate(accessible, self);
 	GameController = get_node("/root/StenoHeroGame");
 	
 	currentTimeStamp = TimeStamp.new(0);
@@ -21,5 +21,6 @@ func _process(delta):
 	currentTimeStamp.seconds = GameController.SongTimer;
 	set_text(currentTimeStamp.get_display_string(2, TimeStamp.DISPLAY_FORCE_MINUTES));
 	
-func _exit_tree():
-	accessible = AccessibleFactory.clear(accessible);
+#func _exit_tree():
+	#accessible = AccessibleFactory.clear(accessible);
+#

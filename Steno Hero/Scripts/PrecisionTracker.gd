@@ -15,7 +15,7 @@ func _init():
 	add_user_signal(PRECISION_CHANGED);
 
 func _ready():	
-	accessible = AccessibleFactory.recreate(accessible, self);
+	#accessible = AccessibleFactory.recreate(accessible, self);
 	GameController = get_node("/root/StenoHeroGame");
 	TextEntry = get_node("../TextInput");
 
@@ -25,8 +25,8 @@ func _ready():
 	GameController.connect(GameController.LINE_FINISHED, self, "_on_line_finished");
 	TextEntry.connect(TextEntry.WORD_SUBMIT, self, "_on_word_entered");
 
-func _exit_tree():
-	accessible = AccessibleFactory.clear(accessible);
+#func _exit_tree():
+	#accessible = AccessibleFactory.clear(accessible);
 
 func _on_line_finished(line):
 	for word in line.words:

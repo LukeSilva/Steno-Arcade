@@ -98,12 +98,12 @@ func _set_frame_percent(val):
 	if(Frames == null):
 		return;		
 		
-	var currentFrame = lerp(0, Frames.get_frame_count(), wrappedPercent);
-	currentFrame = min(int(floor(currentFrame)), Frames.get_frame_count() - 1);
+	var currentFrame = lerp(0, Frames.get_frame_count("default"), wrappedPercent);
+	currentFrame = min(int(floor(currentFrame)), Frames.get_frame_count("default") - 1);
 	
 	Body.set_frame(currentFrame);
 	
-	var texture = Frames.get_frame(currentFrame);
+	var texture = Frames.get_frame("default", currentFrame);
 	if(texture == null):
 		return;
 		

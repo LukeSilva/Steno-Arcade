@@ -1,3 +1,6 @@
+Use Godot v2.1.3 to build
+
+
 ![Steno Arcade](/icon.png)
 
 http://store.steampowered.com/app/449000/

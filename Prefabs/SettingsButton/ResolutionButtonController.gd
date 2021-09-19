@@ -45,7 +45,7 @@ func _init():
 		add_item(resolutions[i].get_display_string(), i);
 	
 func _enter_tree():	
-	accessible = AccessibleFactory.recreate_with_name(accessible, self, "Resolution");
+#	#accessible = AccessibleFactory.recreate_with_name(accessible, self, "Resolution");
 	settings = get_node("/root/GameSettings");
 	
 	if(settings.windowMode != settings.WINDOW_MODE_FULLSCREEN):
@@ -64,7 +64,7 @@ func _enter_tree():
 	_on_display_mode_selected(displayButton.get_selected_ID());
 	
 func _exit_tree():	
-	accessible = AccessibleFactory.clear(accessible);
+#	#accessible = AccessibleFactory.clear(accessible);
 	displayButton.disconnect("item_selected", self, "_on_display_mode_selected");
 	displayButton.disconnect(displayButton.PROGRAMMATIC_ITEM_CHANGED, self, "_on_display_mode_selected");
 	

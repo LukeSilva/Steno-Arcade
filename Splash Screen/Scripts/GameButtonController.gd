@@ -20,10 +20,10 @@ var lastHovered;
 var lastRawHovered;
 var lastFocused;
 
-func _enter_tree():
-	accessible = AccessibleFactory.recreate_with_name(accessible, self, BBCodeTitle);
-func _exit_tree():	
-	accessible = AccessibleFactory.clear(accessible);
+#func _enter_tree():
+#	#accessible = AccessibleFactory.recreate_with_name(accessible, self, BBCodeTitle);
+#func _exit_tree():	
+#	#accessible = AccessibleFactory.clear(accessible);
 
 func _init():	
 	add_user_signal(HOVERED);

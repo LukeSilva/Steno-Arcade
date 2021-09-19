@@ -25,22 +25,22 @@ func _set_dif(val):
 		return;
 	if(val<= 1):
 		texFrame.set_texture(veryEasyLabel);
-		accessible.set_name("Very Easy");
+		#accessible.set_name("Very Easy");
 	elif(val<= 2):
 		texFrame.set_texture(easyLabel);
-		accessible.set_name("Easy");
+		#accessible.set_name("Easy");
 	elif(val<= 3):
 		texFrame.set_texture(normalLabel);
-		accessible.set_name("Normal");
+		#accessible.set_name("Normal");
 	elif(val<= 4):
 		texFrame.set_texture(hardLabel);
-		accessible.set_name("Hard");
+		#accessible.set_name("Hard");
 	else:
 		texFrame.set_texture(veryHardLabel);
-		accessible.set_name("Very Hard");
+		#accessible.set_name("Very Hard");
 
-func _enter_tree():
-	accessible = AccessibleFactory.recreate(accessible, self);
+#func _enter_tree():
+#	#accessible = AccessibleFactory.recreate(accessible, self);
 	
-func _exit_tree():
-	accessible = AccessibleFactory.clear(accessible);
+#func _exit_tree():
+#	#accessible = AccessibleFactory.clear(accessible);

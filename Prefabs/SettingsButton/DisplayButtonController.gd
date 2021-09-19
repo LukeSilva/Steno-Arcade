@@ -13,7 +13,7 @@ func _init():
 	add_user_signal(PROGRAMMATIC_ITEM_CHANGED);
 	
 func _enter_tree():
-	accessible = AccessibleFactory.recreate_with_name(accessible, self, "Display Mode");
+#	#accessible = AccessibleFactory.recreate_with_name(accessible, self, "Display Mode");
 	settings = get_node("/root/GameSettings");
 	
 	displayModes = [];
@@ -29,8 +29,8 @@ func _enter_tree():
 			emit_signal(PROGRAMMATIC_ITEM_CHANGED, i);
 			
 	
-func _exit_tree():
-	accessible = AccessibleFactory.clear(accessible);
+#func _exit_tree():
+#	#accessible = AccessibleFactory.clear(accessible);
 	
 func get_selected_window_mode():
 	if(displayModes == null):

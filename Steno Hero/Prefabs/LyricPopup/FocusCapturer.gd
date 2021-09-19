@@ -6,7 +6,7 @@ var accessible;
 var scrollContainer;
 
 func _ready():
-	accessible = AccessibleFactory.recreate_with_name(accessible, self, "Close");	
+#	#accessible = AccessibleFactory.recreate_with_name(accessible, self, "Close");	
 	grab_focus();
 	
 	scrollContainer = get_node("../Panel/ScrollContainer");
@@ -18,7 +18,7 @@ func _enter_tree():
 	connect("pressed", self, "close_window");
 	
 func _exit_tree():
-	accessible = AccessibleFactory.clear(accessible);
+#	#accessible = AccessibleFactory.clear(accessible);
 	disconnect("pressed", self, "close_window");
 
 func _input_event(event):

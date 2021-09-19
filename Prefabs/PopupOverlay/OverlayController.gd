@@ -19,7 +19,7 @@ func _ready():
 	pass
 
 func _enter_tree():
-	accessible = AccessibleFactory.recreate_with_name(accessible, self, "Confirmation");	
+#	#accessible = AccessibleFactory.recreate_with_name(accessible, self, "Confirmation");	
 	popup = get_node("Popup");
 	popup.connect("about_to_show", self, "show");
 	
@@ -49,7 +49,7 @@ func set_prompt_text(val):
 	pass
 
 func _exit_tree():
-	accessible = AccessibleFactory.clear(accessible);
+#	#accessible = AccessibleFactory.clear(accessible);
 	popup.disconnect("about_to_show", self, "show");
 			
 	get_node("Popup/Panel/YesButton").disconnect("pressed", self, "_go_to_next_scene");

@@ -2,14 +2,14 @@ extends PanelContainer
 
 var accessible;
 
-func _enter_tree():
-	accessible = AccessibleFactory.recreate_with_name(accessible, self, "Credits");
+#func _enter_tree():
+#	#accessible = AccessibleFactory.recreate_with_name(accessible, self, "Credits");
 	
-func _exit_tree():
-	accessible = AccessibleFactory.clear(accessible);
+#func _exit_tree():
+	##accessible = AccessibleFactory.clear(accessible);
 
 func _ready():
-	accessible.set_name(getCreditString());
+	#accessible.set_name(getCreditString());
 	
 	#set_focus_mode(FOCUS_ALL);
 	#grab_focus();

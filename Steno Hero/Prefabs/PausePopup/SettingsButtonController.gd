@@ -6,7 +6,7 @@ var popup;
 var accessible;
 
 func _ready():
-	accessible = AccessibleFactory.recreate_with_name(accessible, self, "Settings");
+	#accessible = AccessibleFactory.recreate_with_name(accessible, self, "Settings");
 	popup = OptionsPopup.instance();
 	popup.connect(popup.CLOSING, self, "grab_focus");
 		
@@ -25,6 +25,6 @@ func _pressed():
 		parent.add_child(popup);
 	popup.popup();
 
-func _exit_tree():
-	accessible = AccessibleFactory.clear(accessible);
+#func _exit_tree():
+	#accessible = AccessibleFactory.clear(accessible);
 

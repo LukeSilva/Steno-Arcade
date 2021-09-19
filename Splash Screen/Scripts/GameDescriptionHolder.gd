@@ -13,14 +13,14 @@ func set_text(text, accessibleText = null):
 	
 	if(accessibleText == null):
 		accessibleText = text;
-	accessible.set_name(accessibleText);
+	##accessible.set_name(accessibleText);
 
-func _enter_tree():	
-	accessible = AccessibleFactory.recreate_with_name(accessible, self, DEFAULT_TEXT);
-	accessible.set_using_popup(true);
+#func _enter_tree():	
+#	#accessible = AccessibleFactory.recreate_with_name(accessible, self, DEFAULT_TEXT);
+#	#accessible.set_using_popup(true);
 	
-func _exit_tree():
-	accessible = AccessibleFactory.clear(accessible);
+#func _exit_tree():
+#	#accessible = AccessibleFactory.clear(accessible);
 	
 func _ready():
 	var buttons = get_tree().get_nodes_in_group("GameButtons");
