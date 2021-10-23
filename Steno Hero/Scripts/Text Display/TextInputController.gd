@@ -108,7 +108,8 @@ func _on_line_started(line):
 func _on_line_ended(line):
 	if(line.is_lull_line()):
 		return;
-		
+	
+	print('about to grade line')
 	_grade_line(line, InputBox.get_text(), WORD_SUBMIT);
 
 	var lyric = FlyawayLyric.instance();
@@ -144,7 +145,7 @@ func _allow_pre_entry():
 func _grade_line(line, text, sig = null, firstSignal = null):		
 	if(!line || line.is_lull_line()):
 		return;
-	
+	print('grade_line "', text ,'"')
 	wordMatchCache.clear();
 	
 	#Break the input into words
@@ -182,7 +183,7 @@ func _grade_line(line, text, sig = null, firstSignal = null):
 				emit_signal(sig, matchedWord);
 				
 func _on_entrybox_text_changed(text):	
-	_grade_line(GameController.CurrentLine, text, null, WORD_REALTIME);
+	_grade_line(GameController.CurrentLine, InputBox.get_text(), null, WORD_REALTIME);
 	
 	var font = InputDisplay.get("custom_fonts/normal_font");
 	var textSize = font.get_string_size(text);
@@ -197,18 +198,26 @@ func _on_entrybox_text_changed(text):
 	for piece in pieces:
 		if(index != 0):
 			bbcode += " ";
-		if(index < pieces.size() && index < wordMatchCache.size()):
-			if(wordMatchCache[index] != null):
-				bbcode += "[color=#" + RightColor.to_html() + "]";
+		while true:
+			if(index < wordMatchCache.size()):
+				if(wordMatchCache[index] != null):
+					bbcode += "[color=#" + RightColor.to_html() + "]";
+				else:
+					bbcode += "[color=#" + WrongColor.to_html() + "]";
 			else:
-				bbcode += "[color=#" + WrongColor.to_html() + "]";
-		else:
-			bbcode += "[color=#" + NeutralColor.to_html() + "]";
-		
-		bbcode += piece;
-		
-		bbcode += "[/color]";
-		
+				bbcode += "[color=#" + NeutralColor.to_html() + "]";
+			
+			if piece.length() == 0 || piece.ord_at(0) < 128:
+				bbcode += piece;
+				
+				bbcode += "[/color]";
+				break;
+			else:
+				bbcode += piece.left(1)
+				bbcode += "[/color]"
+				index += 1
+				piece = piece.right(1)
+			
 		index += 1;
 		
 	InputDisplay.set_bbcode(bbcode);

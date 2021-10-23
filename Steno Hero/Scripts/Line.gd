@@ -38,9 +38,9 @@ func get_display_string():
 	var result = "";
 	
 	for word in words:
-		if(result != ""):
+		if(result != "" && result.ord_at(0) < 128):
 			result += " ";
 		result += word.text;
-		
+	#print('get_display_string', result)
 	return result;
 	

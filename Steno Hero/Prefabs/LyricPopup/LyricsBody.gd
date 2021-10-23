@@ -10,5 +10,6 @@ var accessible;
 #	#accessible = AccessibleFactory.clear(accessible);
 
 func set_text(val):
+	print("Lyrics: " + val)
 	.set_text(val);
 	#accessible.set_name(val);

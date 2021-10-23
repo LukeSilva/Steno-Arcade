@@ -110,11 +110,16 @@ func _update_word_tracker():
 	
 	var prevWord = Word.previous;
 	while(prevWord && !prevWord.is_line_break()):
-		startText = prevWord.text + " " + startText;
+		if (prevWord.text.ord_at(0) < 128):
+			startText = prevWord.text + " " + startText;
+		else:
+			startText = prevWord.text + startText;
 		prevWord = prevWord.previous;
 	
 	#And the same line plus this word
 	var endText = startText + Word.text + " ";
+	if Word.text.ord_at(0) > 127:
+		endText = startText + Word.text
 	var lineText = "";
 	if(Word.owningLine):
 		lineText = Word.owningLine.get_display_string();

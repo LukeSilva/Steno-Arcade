@@ -146,14 +146,19 @@ func _get_line_position():
 	var prevWord = Word.previous;
 	while(prevWord && !prevWord.is_line_break()):
 		isFirstWord = false;
-		startText = prevWord.text + " " + startText;
+		if (prevWord.text.ord_at(0) < 128):
+			startText = prevWord.text + " " + startText;
+		else:
+			startText = prevWord.text + startText;
 		prevWord = prevWord.previous;
 		
 	var isLastWord = Word.next == null || Word.next.is_line_break();	
 	
 	#And the same line plus this word
 	var endText = startText + Word.text;
-	if(!isLastWord):
+	if Word.text.ord_at(0) > 127:
+		endText = startText + Word.text
+	if(!isLastWord && endText.ord_at(endText.length()-1) < 128):
 		endText += " ";
 	
 	var lineText = GameController.CurrentLine.get_display_string();
